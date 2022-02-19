@@ -64,95 +64,98 @@ function human_filesize($bytes, $decimals)
 }
 
 if (isset($_GET["f"])) {
-
     $string = $_GET["f"];
     if (strlen($string) > 20) {
-        $string = urlencode($string);
-        $sql = "SELECT * FROM `uploads` WHERE `hash_filename`='$string'";
-        $result = mysqli_query($db, $sql);
-        $upload = mysqli_fetch_assoc($result);
-        $filename = $upload["filename"];
-        $type = strrchr($filename, '.');
-        $type = str_replace(".", "", $type);
-        $title = $upload['embed_title'];
-        $description = $upload['embed_desc'];
-        $author = $upload['embed_author'];
-        $color = $upload['embed_color'];
-        $username = $upload['username'];
-        $self_destruct_upload = $upload['self_destruct_upload'];
-        $uploaded_at = $upload['uploaded_at'];
-        $role = $upload['role'];
-        $delete_secret = $upload['delete_secret'];
-        $original_filename = $upload['original_filename'];
-        $show_filesize = 0;
-        $sql534534534 = "SELECT * FROM `users` WHERE username='" . $username . "';";
-        $result3123121 = mysqli_query($db, $sql534534534);
-        $upload432423423 = mysqli_fetch_assoc($result3123121);
-        $uuid = $upload432423423["uuid"];
-        $files = scandir('uploads/' . $uuid . '/' . $username);
-        $sql213 = "SELECT * FROM `users` WHERE username='" . $username . "';";
-        $views = $upload['views'];
-        $result123 = mysqli_query($db, $sql213);
-        $result1234 = mysqli_fetch_assoc($result123);
-        $banned = $result1234["banned"];
-        $upload_background = $result1234["upload_background"];
-        $upload_background_toggle = $result1234["upload_background_toggle"];
-        $useridentification = $result1234["uuid"];
-        header("Location: https://c-cloud.rocks/$filename");
+      $string = urlencode($string);
+      $sql = "SELECT * FROM `uploads` WHERE `hash_filename`='$string'";
+      $result = mysqli_query($db, $sql);
+      $upload = mysqli_fetch_assoc($result);
+      $filename = $upload["filename"];
+      $type = strrchr($filename, '.');
+      $type = str_replace(".", "", $type);
+      $title = $upload['embed_title'];
+      $description = $upload['embed_desc'];
+      $author = $upload['embed_author'];
+      $color = $upload['embed_color'];
+      $username = $upload['username'];
+      $self_destruct_upload = $upload['self_destruct_upload'];
+      $uploaded_at = $upload['uploaded_at'];
+      $role = $upload['role'];
+      $delete_secret = $upload['delete_secret'];
+      $original_filename = $upload['original_filename'];
+      $show_filesize = 0;
+      $sql534534534 = "SELECT * FROM `users` WHERE username='" . $username . "';";
+      $result3123121 = mysqli_query($db, $sql534534534);
+      $upload432423423 = mysqli_fetch_assoc($result3123121);
+      $uuid = $upload432423423["uuid"];
+      $files = scandir('uploads/' . $uuid . '/' . $username);
+      $sql213 = "SELECT * FROM `users` WHERE username='" . $username . "';";
+      $views = $upload['views'];
+      $result123 = mysqli_query($db, $sql213);
+      $result1234 = mysqli_fetch_assoc($result123);
+      $banned = $result1234["banned"];
+      $upload_background = $result1234["upload_background"];
+      $upload_background_toggle = $result1234["upload_background_toggle"];
+      $useridentification = $result1234["uuid"];
+      header("Location: https://c-cloud.rocks/$filename");
+      exit;
     } else {
-        $type = strrchr($string, '.');
-        $type = str_replace(".", "", $type);
-        $sql = "SELECT * FROM `uploads` WHERE `filename`='" . $string . "';";
-        $result = mysqli_query($db, $sql);
-        $upload = mysqli_fetch_assoc($result);
-        $filename = $upload["filename"];
-        $title = $upload['embed_title'];
-        $description = $upload['embed_desc'];
-        $author = $upload['embed_author'];
-        $color = $upload['embed_color'];
-        $username = $upload['username'];
-        $self_destruct_upload = $upload['self_destruct_upload'];
-        $uploaded_at = $upload['uploaded_at'];
-        $role = $upload['role'];
-        $delete_secret = $upload['delete_secret'];
-        $original_filename = $upload['original_filename'];
-        $show_filesize = 0;
-        $sql534534534 = "SELECT * FROM `users` WHERE username='" . $username . "';";
-        $result3123121 = mysqli_query($db, $sql534534534);
-        $upload432423423 = mysqli_fetch_assoc($result3123121);
-        $uuid = $upload432423423["uuid"];
-        $files = scandir('uploads/' . $uuid . '/' . $username);
-        $sql213 = "SELECT * FROM `users` WHERE username='" . $username . "';";
-        $views = $upload['views'];
-        $result123 = mysqli_query($db, $sql213);
-        $result1234 = mysqli_fetch_assoc($result123);
-        $banned = $result1234["banned"];
-        $upload_background = $result1234["upload_background"];
-        $upload_background_toggle = $result1234["upload_background_toggle"];
-        $useridentification = $result1234["uuid"];
+      $type = strrchr($string, '.');
+      $type = str_replace(".", "", $type);
+      $sql = "SELECT * FROM `uploads` WHERE `filename`='" . $string . "';";
+      $result = mysqli_query($db, $sql);
+      $upload = mysqli_fetch_assoc($result);
+      $filename = $upload["filename"];
+      $title = $upload['embed_title'];
+      $description = $upload['embed_desc'];
+      $author = $upload['embed_author'];
+      $color = $upload['embed_color'];
+      $username = $upload['username'];
+      $self_destruct_upload = $upload['self_destruct_upload'];
+      $uploaded_at = $upload['uploaded_at'];
+      $role = $upload['role'];
+      $delete_secret = $upload['delete_secret'];
+      $original_filename = $upload['original_filename'];
+      $show_filesize = 0;
+      $sql534534534 = "SELECT * FROM `users` WHERE username='" . $username . "';";
+      $result3123121 = mysqli_query($db, $sql534534534);
+      $upload432423423 = mysqli_fetch_assoc($result3123121);
+      $uuid = $upload432423423["uuid"];
+      $files = scandir('uploads/' . $uuid . '/' . $username);
+      $sql213 = "SELECT * FROM `users` WHERE username='" . $username . "';";
+      $views = $upload['views'];
+      $result123 = mysqli_query($db, $sql213);
+      $result1234 = mysqli_fetch_assoc($result123);
+      $banned = $result1234["banned"];
+      $upload_background = $result1234["upload_background"];
+      $upload_background_toggle = $result1234["upload_background_toggle"];
+      $useridentification = $result1234["uuid"];
     }
     if ($self_destruct_upload == "true" && $views >= 2) {
+      if (strpos($user_agent, "Discordbot")) {
+        die("fuck off discord");
+      } else {
         unlink("uploads/$uuid/$username/" . $filename);
         $query = "SELECT * FROM users WHERE username='$username'";
         $result = mysqli_query($db, $query);
         if (mysqli_num_rows($result) > 0) {
-            while ($row = mysqli_fetch_assoc($result)) {
-                $uploads = "" . $row["uploads"] . "" - 1;
-            }
+          while ($row = mysqli_fetch_assoc($result)) {
+            $uploads = "" . $row["uploads"] . "" - 1;
+          }
         } else {
-            $uploads = 0;
+          echo "0 results";
         }
         $query = "UPDATE users SET uploads=$uploads WHERE username='" . $username . "';";
         $result = mysqli_query($db, $query);
         $query = "DELETE FROM `uploads` WHERE `delete_secret`='" . $delete_secret . "';";
         $result = mysqli_query($db, $query);
         die();
+      }
     }
-}
-  foreach ($files as $file) {
-    if ($file == $_GET["f"]) {
-      $filesize = human_filesize(filesize('uploads/' . $uuid . '/' . $username . "/" . $upload["filename"]), 2);
-
+    foreach ($files as $file) {
+      if ($file == $_GET["f"]) {
+        $filesize = human_filesize(filesize('uploads/' . $uuid . '/' . $username . "/" . $upload["filename"]), 2);
+  
 ?>
       <head>
         <link rel="icon" type="image/png" href="assets/images/icons/favicon.ico" />
@@ -602,7 +605,7 @@ if (isset($_GET["f"])) {
             </div>
             <div class="modal-body">
               <div class="form-title text-center">
-                <img src="<?php echo SITE_URL ?>/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
+                <img src="https://c-cloud.rocks/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
                 <h4 style="color: #fff;">Register</h4>
               </div>
               <div class="d-flex flex-column text-center">
@@ -641,7 +644,7 @@ if (isset($_GET["f"])) {
           </div>
           <div class="modal-body">
             <div class="form-title text-center">
-              <img src="<?php echo SITE_URL ?>/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
+              <img src="c-cloud.rocks/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
               <h4 style="color: #fff;">Login</h4>
             </div>
             <div class="d-flex flex-column text-center">
