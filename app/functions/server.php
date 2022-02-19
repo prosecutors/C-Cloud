@@ -149,23 +149,64 @@ if(isset($_POST['reg_user'])) {
     }
 }
 
+// if (isset($_POST['login_user'])) {
+
+//     $username = mysqli_real_escape_string($db, $_POST['username']);
+//     $password = mysqli_real_escape_string($db, $_POST['password']);
+//     if (empty($username))
+//     {
+//         array_push($errors, "Username is required");
+//     }
+//     if (empty($password))
+//     {
+//         array_push($errors, "Password is required");
+//     }
+
+//     if (count($errors) == 0) {
+
+//         $query = "SELECT * FROM users WHERE username='$username'";
+//         $results = mysqli_query($db, $query);
+//         if (mysqli_num_rows($results) == 1) {
+//             $row = mysqli_fetch_assoc($results);
+//             if (password_verify($password, $row['password'])) {
+//                 $_SESSION['username'] = $username;
+//                 $_SESSION['key'] = $row['invite'];
+//                 $_SESSION['success'] = "You are now logged in";
+//                 mysqli_query($db, $query);
+//             } else {
+//                 array_push($errors, "Wrong username/password combination");
+//             }
+
+
+//     }
+
+// }
+
+// }
+
 if (isset($_POST['login_user'])) {
 
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
-    if (empty($username))
-    {
-        array_push($errors, "Username is required");
-    }
-    if (empty($password))
-    {
-        array_push($errors, "Password is required");
-    }
 
+    // empty($username) || empty($password)
+    if (empty($username) || empty($password))
+    {
+        array_push($errors, "Username/Password is required");
+    }
+    // if (empty($username))
+    // {
+    //     array_push($errors, "Username is required");
+    // }
+    // if (empty($password))
+    // {
+    //     array_push($errors, "Password is required");
+    // }
     if (count($errors) == 0) {
 
         $query = "SELECT * FROM users WHERE username='$username'";
         $results = mysqli_query($db, $query);
+        // verify password
         if (mysqli_num_rows($results) == 1) {
             $row = mysqli_fetch_assoc($results);
             if (password_verify($password, $row['password'])) {
@@ -176,8 +217,23 @@ if (isset($_POST['login_user'])) {
             } else {
                 array_push($errors, "Wrong username/password combination");
             }
-        }
 
+            $twofa_status = $user['use_2fa'];
+            if ($twofa_status == "false") {
+                $_SESSION['username'] = "";
+                $_SESSION['uploads'] = $user['uploads'];
+                $_SESSION['success'] = "<div class='card' <div class='card-body'> <br> <h3 class='card-text' style='color: green;'>You are Logged in!</h3> <br> </div> </div> <br>";
+
+                header('location: dashboard/');
+            } else if ($twofa_status == "true") {
+                $_SESSION['usernamesecret'] = $username;
+                $_SESSION['uploads'] = $user['uploads'];
+                $_SESSION['success'] = "<div class='card' <div class='card-body'> <br> <h3 class='card-text' style='color: green;'>You are Logged in!</h3> <br> </div> </div> <br>";
+                header('location: /2fa/login');
+            }
+        }
+    } else {
+        array_push($errors, "Wrong username/password combination");
     }
 
 }
