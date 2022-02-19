@@ -512,13 +512,13 @@ if (isset($_GET["f"])) {
     </head>
 
   <body>
-    <div id="preloader">
+    <!-- <div id="preloader">
       <div class="jumper">
         <div></div>
         <div></div>
         <div></div>
       </div>
-    </div>
+    </div> -->
     <div class="welcome-area" id="welcome">
       <div class="header-text">
         <div class="container">
