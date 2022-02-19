@@ -605,7 +605,7 @@ if (isset($_GET["f"])) {
             </div>
             <div class="modal-body">
               <div class="form-title text-center">
-                <img src="https://dev.clynt.de/assets/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
+                <img src="assets/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
                 <h4 style="color: #fff;">Register</h4>
               </div>
               <div class="d-flex flex-column text-center">
@@ -644,7 +644,7 @@ if (isset($_GET["f"])) {
           </div>
           <div class="modal-body">
             <div class="form-title text-center">
-              <img src="https://dev.clynt.de/assets/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
+              <img src="assets/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
               <h4 style="color: #fff;">Login</h4>
             </div>
             <div class="d-flex flex-column text-center">
