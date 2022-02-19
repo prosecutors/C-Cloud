@@ -35,22 +35,22 @@ if (isset($_GET["invite"])) {
         $giftAuthor = $row["inviteAuthor"];
         echo "<head>
         <meta name='theme-color' content='#6605ed'>
-        <meta name='og:site_name' content='https://c-cloud.rocks/'>
+        <meta name='og:site_name' content='https://dev.clynt.de/'>
         <meta property='og:title' content='C-Cloud | Invite Code' />
-        <meta property=og:url content='https://c-cloud.rocks/invite/$invitecode' />
+        <meta property=og:url content='https://dev.clynt.de/invite/$invitecode' />
         <meta property='og:type' content='website' />
         <meta property='og:description' content='$giftAuthor invited you to C-Cloud!'/>
-        <meta content='https://c-cloud.rocks/images/logo.png' property='og:image'>
+        <meta content='https://dev.clynt.de/images/logo.png' property='og:image'>
         </head>";
     } else {
         echo "<head>
         <meta name='theme-color' content='#ff0303'>
-        <meta name='og:site_name' content='https://c-cloud.rocks/'>
+        <meta name='og:site_name' content='https://dev.clynt.de/'>
         <meta property='og:title' content='C-Cloud | Invite Code' />
-        <meta property=og:url content='https://c-cloud.rocks/invite/$invitecode' />
+        <meta property=og:url content='https://dev.clynt.de/invite/$invitecode' />
         <meta property='og:type' content='website' />
         <meta property='og:description' content='Invite code not found!'/>
-        <meta content='https://c-cloud.rocks/images/logo.png' property='og:image'>
+        <meta content='https://dev.clynt.de/images/logo.png' property='og:image'>
         </head>";
     }
 }
@@ -97,7 +97,7 @@ if (isset($_GET["f"])) {
       $upload_background = $result1234["upload_background"];
       $upload_background_toggle = $result1234["upload_background_toggle"];
       $useridentification = $result1234["uuid"];
-      header("Location: https://c-cloud.rocks/$filename");
+      header("Location: https://dev.clynt.de/$filename");
       exit;
     } else {
       $type = strrchr($string, '.');
@@ -163,9 +163,9 @@ if (isset($_GET["f"])) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
 
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-        <link rel="apple-touch-icon" href="https://c-cloud.rocks/images/logo.png" />
+        <link rel="apple-touch-icon" href="https://dev.clynt.de/images/logo.png" />
 
-        <link rel="apple-touch-startup-image" href="https://c-cloud.rocks/images/logo.png" />
+        <link rel="apple-touch-startup-image" href="https://dev.clynt.de/images/logo.png" />
         <link rel="stylesheet" type="text/css" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="assets/fonts/iconic/css/material-design-iconic-font.min.css">
         <link rel="stylesheet" type="text/css" href="/css/util.css">
@@ -183,7 +183,7 @@ if (isset($_GET["f"])) {
         elseif ($type == "mp4" || $type == "webm") : ?>
           <meta name='twitter:card' content='player'>
           <meta name="twitter:description" content="<?php echo $description; ?>">
-          <meta name='twitter:player' content='<?php echo "https://c-cloud.rocks/uploads/$useridentification/$username/" . $_GET["f"]; ?>'>
+          <meta name='twitter:player' content='<?php echo "https://dev.clynt.de/uploads/$useridentification/$username/" . $_GET["f"]; ?>'>
           <meta name='twitter:player:width' content='1920'>
           <meta name='twitter:player:height' content='1080'>
         <?php
@@ -330,7 +330,7 @@ if (isset($_GET["f"])) {
                   if ($type == 'png' || $type == 'gif' || $type == 'jpeg' || $type == 'jpg') {
                     $path = 'uploads/' . $uuid . '/' . $username . "/" . $_GET['f'];
                     echo "<div class='img-container'>
-                        <a href='https://c-cloud.rocks/" . 'uploads/' . $uuid . '/' . $username . "/" . $_GET['f'] . "'> <img src='https://c-cloud.rocks/" . 'uploads/' . $uuid . '/' . $username . "/" . $_GET['f'] . "'></img></a>
+                        <a href='https://dev.clynt.de/" . 'uploads/' . $uuid . '/' . $username . "/" . $_GET['f'] . "'> <img src='https://dev.clynt.de/" . 'uploads/' . $uuid . '/' . $username . "/" . $_GET['f'] . "'></img></a>
                      </div>";
                   } else if ($type == "mp4") {
                     echo "<style>
@@ -473,13 +473,13 @@ if (isset($_GET["f"])) {
     <?php
     if (!isset($_GET["invite"])) {
       echo "<meta name='theme-color' content='#6605ed'>
-            <meta name='og:site_name' content='https://c-cloud.rocks/'>
+            <meta name='og:site_name' content='https://dev.clynt.de/'>
             <meta property='og:title' content='C-Cloud' />
-            <meta property='og:url' content='https://c-cloud.rocks/' />
+            <meta property='og:url' content='https://dev.clynt.de/' />
             <meta property='og:type' content='website' />
             <meta property='og:description' content='A Free File Uploader for all of your Files.' />
             <meta property='og:locale' content='en_GB' />
-            <meta content='https://c-cloud.rocks/images/logo.png' property='og:image'>";
+            <meta content='https://dev.clynt.de/images/logo.png' property='og:image'>";
     }
     ?>
     <!DOCTYPE html>
@@ -492,14 +492,14 @@ if (isset($_GET["f"])) {
       <meta name="description" content="">
       <meta name="author" content="">
       <meta name='theme-color' content='#6605ed'>
-      <link rel="icon" type="image/png" href="https://c-cloud.rocks/images/icons/favicon.ico">
-      <meta name='og:site_name' content='https://c-cloud.rocks/'>
+      <link rel="icon" type="image/png" href="https://dev.clynt.de/assets/images/icons/favicon.ico">
+      <meta name='og:site_name' content='https://dev.clynt.de/'>
       <meta property='og:title' content='C-Cloud' />
-      <meta property='og:url' content='https://c-cloud.rocks/' />
+      <meta property='og:url' content='https://dev.clynt.de/' />
       <meta property='og:type' content='website' />
       <meta property='og:description' content='A Free File Uploader for all of your Files.' />
       <meta property='og:locale' content='en_GB' />
-      <meta content='https://c-cloud.rocks/images/logo.png' property='og:image'>
+      <meta content='https://dev.clynt.de/images/logo.png' property='og:image'>
       <link href="https://fonts.googleapis.com/css?family=Raleway:100,300,400,500,700,900" rel="stylesheet">
       <script async src="https://arc.io/widget.min.js#3uop4387"></script>
       <!-- Additional CSS Files -->
@@ -605,7 +605,7 @@ if (isset($_GET["f"])) {
             </div>
             <div class="modal-body">
               <div class="form-title text-center">
-                <img src="https://c-cloud.rocks/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
+                <img src="https://dev.clynt.de/assets/images/icons/favicon.ico" style="height: 128px; margin-bottom: 40px; border: 1px solid #3e3e3e; border-radius: 15px;">
                 <h4 style="color: #fff;">Register</h4>
               </div>
               <div class="d-flex flex-column text-center">
